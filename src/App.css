@@ -1,0 +1,167 @@
+#root{
+  margin-bottom: 20px;
+}
+.navbar{
+    background-color: #343a40;
+}
+.nav-link:hover{
+    color: rgb(253,206,206) !important;
+}
+.menu_active{
+    font-weight: bold;
+    border-bottom: 1px solid hotpink;
+}
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml;charset:utf-8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0,128,0,0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22' /%3E%3C/svg%3E");
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.heading{
+  font-family: 'Kaushan Script', cursive;
+  text-transform: capitalize;
+}
+a{
+  text-decoration: none;
+  font-style: italic;
+}
+.profilecard{
+    color: #f9f9f9;
+    margin-bottom: 20px;
+    box-shadow: 0;
+    background-image: linear-gradient(135deg, #ff7300, #cf11a0);
+    border-radius: 4px;
+    border-width: 0;
+    padding: 15px 15px;
+    isolation: isolate;
+}
+.profilecard::after{
+  position: absolute;
+  content: '';
+  inset: 0;
+  background: inherit;
+  filter: blur(5px);
+  z-index: -1;
+}
+/**/
+.postcard{
+  color: #f9f9f9;
+  max-width: 275px;
+  height: 375px;
+  margin-bottom: 50px;
+  padding: 12.5em 0 0;
+  border-radius: 15px;
+  border-width: 0;
+  overflow: hidden;
+  position: relative;
+  background-color: rgb(110, 211, 84);
+  background-position: center center;
+  background-size: cover;
+  isolation: isolate;
+  box-shadow: 10px 20px 30px -10px rgba(0,0,0,.35);
+}
+.postcard::before{
+  position: absolute;
+  content: '';
+  top: -15%;
+  height: 130%;
+  width: 50%;
+  left: 25%;
+  background-image: linear-gradient(135deg, #d16811, #0ac0e0);
+  animation: animate 5s linear infinite;
+  z-index: -10;
+}
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.postcard::after{
+  position: absolute;
+  content: '';
+  inset: 3px;
+  background: inherit;
+  z-index: -5;
+  border-radius: 12px;
+}
+.card-content {
+  padding: 1.5em;
+  padding-top: 2.5em;
+  position: relative;
+  isolation: isolate;
+  background-image: linear-gradient(
+    hsl(0 0% 0% / 0), 
+    hsl(20 0% 0% /0.3) 20%,
+    hsl(0 0% 0% / 1)
+  ); 
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+}
+.card-content::before{
+  position: absolute;
+  content: '';
+  inset: 0;
+  z-index: -1;
+  opacity: 0.4;
+  background-image: linear-gradient(135deg,#0100ec,#fb36f4);
+  clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+}
+.card-title{
+  position: relative;
+}
+.card-title::after{
+  position: absolute;
+  content: '';
+  left: -1.5rem;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(68, 246, 134);
+}
+
+@media(hover){
+  .postcard:hover{
+    transform: scale(1.03);
+    box-shadow: 10px 20px 40px -10px rgba(0,0,0,.5);
+    transition: all 500ms ease;
+  }
+  .card-content{
+    transform: translateY(35%);
+  }
+  .postcard:hover .card-content{
+    transform: translateY(0);
+    transition: all 500ms ease;
+    transition-delay: 500ms;
+  }
+  .card-content > *:not(.card-title){
+    opacity: 0;
+  }
+  .postcard:hover .card-content > *:not(.card-title){
+    opacity: 1;
+    transition: all 500ms ease;
+    transition-delay: 1000ms;
+  }
+  
+  .card-title::after{
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .postcard:hover .card-title::after{
+    transform: scaleX(1);
+    transition: all 500ms ease;
+  }
+  
+}
+.text-background{
+  background-image: linear-gradient(45deg,#f09433,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888);
+  background-clip: text;
+  color: transparent;
+}
+.size{
+  width: 80px;
+  height: 80px;
+}
